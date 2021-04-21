@@ -1,12 +1,5 @@
 'use strict';
 
-const petInfo = {
-  name: '',
-  specie: '',
-  oldInYears: 0,
-  oldInMonths: 0
-}
-
 function buildCarousel() {
   images.forEach((image, index) => {
     const imageElement = document.createElement('img');
