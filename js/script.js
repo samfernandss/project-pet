@@ -1,50 +1,81 @@
 'use strict';
 
-function mountCarousel() {
+const petInfo = {
+  name: '',
+  specie: '',
+  oldInYears: 0,
+  oldInMonths: 0
+}
+
+function buildCarousel() {
   images.forEach((image, index) => {
     const imageElement = document.createElement('img');
-      imageElement.setAttribute('class', 'd-block w-100 mx-auto block');
-      imageElement.setAttribute('src', image.src);
-      imageElement.setAttribute('title', image.title);
-      imageElement.style.height = '500px';
+    imageElement.setAttribute('class', 'd-block w-100 mx-auto block');
+    imageElement.setAttribute('src', image.src);
+    imageElement.setAttribute('title', image.title);
+    imageElement.style.height = '500px';
 
     const carouselItem = document.createElement('div');
     carouselItem.setAttribute('data-interval', 5000);
 
-    if (index === 0) {
-      carouselItem.setAttribute('class', 'carousel-item active')
-    } else {
-      carouselItem.setAttribute('class', 'carousel-item')
-    }
+    carouselItem.setAttribute('class',
+      index === 0
+        ? 'carousel-item active'
+        : 'carousel-item'
+    );
 
     carouselItem.appendChild(imageElement);
     document.querySelector('#myCarousel').appendChild(carouselItem);
   });
 }
 
-const trElement = document.createElement('tr');
-const thElement = document.createElement('th');
-const tdNameElement = document.createElement('td');
-const tdSpecieElement = document.createElement('td');
-const tdAgeElement = document.createElement('td');
+function buildRowElement() {
+  const trElement = document.createElement('tr');
+  const tdIdElement = document.createElement('td');
+  const tdNameElement = document.createElement('td');
+  const tdSpecieElement = document.createElement('td');
+  const tdAgeElement = document.createElement('td');
 
-document.querySelector('tbody').appendChild(trElement);
-document.querySelector('tr').appendChild(thElement);
-document.querySelector('tr').appendChild(tdNameElement);
-document.querySelector('tr').appendChild(tdSpecieElement);
-document.querySelector('tr').appendChild(tdAgeElement);
+  tdIdElement.textContent = '';
+  tdNameElement.textContent = petInfo.name;
+  tdSpecieElement.textContent = petInfo.specie;
+  tdAgeElement.textContent = `${petInfo.oldInYears},${petInfo.oldInMonths} years old.`;
 
-{/* <tr>
-						<th scope="row">1</th>
-						<td>Puruca</td>
-						<td>Dog</td>
-						<td>13 years</td>
-					</tr>
-				</tbody> */}
+  trElement.appendChild(tdIdElement);
+  trElement.appendChild(tdNameElement);
+  trElement.appendChild(tdSpecieElement);
+  trElement.appendChild(tdAgeElement);
+  document.querySelector('tbody').appendChild(trElement);
+}
 
-const btnSave = document.querySelector('#save');
-btnSave.addEventListener('click', function(){
+function getPetsInfo() {
+  document.querySelector('#petName')
+    .addEventListener('change', ({ target: { value } }) => {
+      petInfo.name = value;
+    });
 
-})
+  document.querySelector('#petSpecie')
+    .addEventListener('change', ({ target: { value } }) => {
+      petInfo.specie = value;
+    });
 
-mountCarousel();
+  document.querySelector('#petAge')
+    .addEventListener('change', ({ target: { value } }) => {
+      petInfo.oldInYears = value;
+    });
+
+  document.querySelector('#petAgeMonth')
+    .addEventListener('change', ({ target: { value } }) => {
+      petInfo.oldInMonths = value;
+    });
+}
+
+document.querySelector('#save')
+  .addEventListener('click', () => {
+    buildRowElement();
+
+    console.log(petInfo.name, petInfo.specie, petInfo.oldInMonths, petInfo.oldInYears);
+  });
+
+buildCarousel();
+getPetsInfo();
