@@ -24,8 +24,15 @@ function mountCarousel() {
 
 const trElement = document.createElement('tr');
 const thElement = document.createElement('th');
-const tdElement = document.createElement('td');
+const tdNameElement = document.createElement('td');
+const tdSpecieElement = document.createElement('td');
+const tdAgeElement = document.createElement('td');
+
 document.querySelector('tbody').appendChild(trElement);
+document.querySelector('tr').appendChild(thElement);
+document.querySelector('tr').appendChild(tdNameElement);
+document.querySelector('tr').appendChild(tdSpecieElement);
+document.querySelector('tr').appendChild(tdAgeElement);
 
 {/* <tr>
 						<th scope="row">1</th>
