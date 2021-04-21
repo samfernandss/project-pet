@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<title>The Pets</title>
+</head>
+
+<body class="bg-secondary">
+	<div class="container bg-white rounded">
+
+		<div id="carouselWithControls" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner" id="myCarousel">
+			</div>
+
+			<a class="carousel-control-prev" href="#carouselWithControls" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+
+			<a class="carousel-control-next" href="#carouselWithControls" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+
+		<h1 class="text-center mt-4 mb-5">My Pets</h1>
+
+		<div class="form-group text-center mt-4 mb-4">
+			<label for="petName text-white">What is your pet's name?</label>
+			<input type="text" class="form-control col-4 mx-auto block" id="petName" placeholder="Enter here" />
+		</div>
+
+		<div class="form-group text-center mt-4 mb-4">
+			<label for="petName text-white">What is your pet's specie?</label>
+			<input type="text" class="form-control col-4 mx-auto block" id="petSpecie" placeholder="Enter here" />
+		</div>
+
+		<div class="form-group text-center mb-4">
+			<label for="petName text-white">How old is your pet in years?</label>
+			<input type="number" class="form-control col-2 mx-auto block" id="petAge" placeholder="Enter here" min="0"
+				step="1" />
+		</div>
+
+		<div class="form-group text-center mt-4 mb-4">
+			<label for="petName text-white">Your pet's Months</label>
+			<input type="number" class="form-control col-2 mx-auto block" id="petAgeMonth" placeholder="Enter here" min="0"
+				step="1" />
+		</div>
+
+		<button type="button" id="save" class="btn btn-success  mx-auto d-block">Save</button>
+
+		<div class="row justify-content-center pt-5 pb-5">
+			<table class="table table-borderless col-8">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Name</th>
+						<th scope="col">Specie</th>
+						<th scope="col">Age</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Puruca</td>
+						<td>Dog</td>
+						<td>13 years</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<script src="./js/arrays.js"></script>
+	<script src="./js/script.js"></script>
+	<script src="./js/jquery-3.5.1.slim.min.js"></script>
+	<script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+
+</html>

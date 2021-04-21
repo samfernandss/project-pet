@@ -1,0 +1,15 @@
+body {
+  font-family: Raleway !important;
+}
+
+input::placeholder{
+  text-align: center;
+}
+
+input:focus{
+  text-align: center;
+}
+
+input{
+  text-align: center;
+}
