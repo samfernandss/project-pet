@@ -11,3 +11,10 @@ const dropdownItems = [
   { value: 'snake', label: 'Snake' },
   { value: 'rabbit', label: 'Rabbit' }
 ];
+
+const petInfo = {
+  name: '',
+  specie: '',
+  oldInYears: 0,
+  oldInMonths: 0
+}
