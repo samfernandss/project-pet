@@ -13,8 +13,16 @@ const dropdownItems = [
 ];
 
 const petInfo = {
+  code: 0,
   name: '',
   specie: '',
   oldInYears: 0,
   oldInMonths: 0
 }
+
+const tdElements = [
+  { key: 'code', ref: null },
+  { key: 'name', ref: null },
+  { key: 'specie', ref: null },
+  { key: 'age', ref: null }
+]

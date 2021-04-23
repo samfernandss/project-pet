@@ -24,20 +24,17 @@ function buildCarousel() {
 
 function buildRowElement() {
   const trElement = document.createElement('tr');
-  const tdIdElement = document.createElement('td');
-  const tdNameElement = document.createElement('td');
-  const tdSpecieElement = document.createElement('td');
-  const tdAgeElement = document.createElement('td');
 
-  tdIdElement.textContent = '';
-  tdNameElement.textContent = petInfo.name;
-  tdSpecieElement.textContent = petInfo.specie;
-  tdAgeElement.textContent = `${petInfo.oldInYears},${petInfo.oldInMonths} years old.`;
+  tdElements.forEach( td => {
+    td.ref = document.createElement('td');
+    td.ref.textContent = 
+      td.key !== 'age' 
+        ? petInfo[td.key]
+        : `${petInfo.oldInYears}, ${petInfo.oldInMonths} years old.`;
+    
+    trElement.appendChild(td.ref);
+  });
 
-  trElement.appendChild(tdIdElement);
-  trElement.appendChild(tdNameElement);
-  trElement.appendChild(tdSpecieElement);
-  trElement.appendChild(tdAgeElement);
   document.querySelector('tbody').appendChild(trElement);
 }
 
